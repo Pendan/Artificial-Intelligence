@@ -3,9 +3,13 @@
 #include <stdlib.h>
 
 
-int main(int argc, char **argv){
+int main(int argc){
+char *file="navi.txt";
+printf("Opening.. %s \n",file);
 
 
+int righe[10];
+int colonne[10];
 int caselle[10][10];
 
 caselle[1][2]=10;
@@ -18,13 +22,12 @@ for (i=0; i<10; i++){
 }
 }
 printf(" ");
-
 int lettere[14]={2,2,2,2,2,3,4,5,6,6,7,8,10,10};
 int numeri[14]={5,6,7,8,9,3,3,3,3,7,7,7,7,8};
 for (i=0; i<10; i++){
 	for (j=0; j<10; j++){
 		for (k=0; k<14; k++){
-			if(j+1==lettere[k] && i+1==numeri[k]){
+			if(i==lettere[k] && j==numeri[k]){
 				caselle[i][j]=1;
 }
 }
@@ -37,8 +40,6 @@ for (i=0; i<10; i++){
 }
 printf("\n ");
 }
-
-
 
 srand(time(NULL));
 int col = rand() % 10;
@@ -84,15 +85,6 @@ for (t=0;t<100;t++){
 					printf("c'hai ripreso! %d %d \n",(cas+contatore)/10,(cas+contatore)%10);
 					conto++;
 					preso=1;
-					
-					
-					cento[cas1+contatore+10]=2;
-					cento[cas1+contatore-10]=2;
-					cento[cas1+contatore+10+1]=2;
-					cento[cas1+contatore-10-1]=2;
-					cento[cas1+contatore+10-1]=2;
-					cento[cas1+contatore-10+1]=2;
-					
 					}
 				
 				else{ if(ko==13 && preso==0){
@@ -114,12 +106,6 @@ for (t=0;t<100;t++){
 					printf("c'hai ripreso! %d %d \n",(cas-contatore)/10,(cas-contatore)%10);
 					conto++;
 					preso=1;
-					cento[cas1-contatore+10]=2;
-					cento[cas1-contatore-10]=2;
-					cento[cas1-contatore+10+1]=2;
-					cento[cas1-contatore-10-1]=2;
-					cento[cas1-contatore+10-1]=2;
-					cento[cas1-contatore-10+1]=2;
 					}
 				
 				else{ if(ko==13 && preso==0){
@@ -140,12 +126,6 @@ for (t=0;t<100;t++){
 					printf("c'hai ripreso! %d %d \n",(cas+contatore)/10,(cas+contatore)%10);
 					conto++;
 					preso=1;
-					cento[cas1+contatore+1]=2;
-					cento[cas1+contatore-1]=2;
-					cento[cas1+contatore+10+1]=2;
-					cento[cas1+contatore-10-1]=2;
-					cento[cas1+contatore+10-1]=2;
-					cento[cas1+contatore-10+1]=2;
 					}
 				
 				else{ if(ko==13 && preso==0){
@@ -166,12 +146,6 @@ for (t=0;t<100;t++){
 					printf("c'hai ripreso! %d %d \n",(cas-contatore)/10,(cas-contatore)%10);
 					conto++;
 					preso=1;
-					cento[cas1-contatore+1]=2;
-					cento[cas1-contatore-1]=2;
-					cento[cas1-contatore+10+1]=2;
-					cento[cas1-contatore-10-1]=2;
-					cento[cas1-contatore+10-1]=2;
-					cento[cas1-contatore-10+1]=2;
 					}
 				
 				else{ if(ko==13 && preso==0){
@@ -195,6 +169,15 @@ for (t=0;t<100;t++){
 			cento[cas1]=2;
 	//		printf("%d %d \n",cas/10,cas%10);
 		}
+
+
+
+
+
+
+
+
+
 
 return 0;
 }
